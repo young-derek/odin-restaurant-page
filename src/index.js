@@ -23,5 +23,3 @@ linkMenu.href = '#menu';
 linkMenu.textContent = 'Menu';
 linkContact.href = '#contact';
 linkContact.textContent = 'Contact';
-
-
