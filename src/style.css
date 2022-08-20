@@ -60,6 +60,11 @@
     padding: 1rem;
 }
 
+#testimonial-list {
+    font-style: italic;
+    line-height: 2rem;
+}
+
 .grid-tile {
     display: flex;
     flex-direction: column;
@@ -79,7 +84,7 @@
 #menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3rem 5rem;
 }
 
 #content {
@@ -149,5 +154,17 @@ footer {
     flex-direction: column;
     gap: 2rem;
     background-color: var(--strong-color);
+    padding: 1rem;
+}
+
+#contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vw;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
     padding: 1rem;
 }
