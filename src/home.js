@@ -1,5 +1,6 @@
 const homeContainer = document.createElement('div');
 const splashContainer = document.createElement('div');
+const splashInfo = document.createElement('div');
 const splashTitle = document.createElement('h2');
 const splashSubtitle = document.createElement('p');
 const splashBtnMenu = document.createElement('button');
@@ -12,29 +13,52 @@ const locationTitle = document.createElement('h3');
 const locationContent = document.createElement('p');
 const testimonialContainer = document.createElement('div');
 const testimonialTitle = document.createElement('h3');
-const testimonialOne = document.createElement('p');
-const testimonialTwo = document.createElement('p');
 
 homeContainer.append(splashContainer, informationContainer);
-splashContainer.append(splashTitle, splashSubtitle, splashBtnMenu);
-informationContainer.append(hoursContainer, locationContainer, testimonialContainer);
+splashContainer.append(splashInfo);
+splashInfo.append(splashTitle, splashSubtitle, splashBtnMenu);
+informationContainer.append(
+    hoursContainer,
+    locationContainer,
+    testimonialContainer
+);
 hoursContainer.append(hoursTitle, hoursList);
 locationContainer.append(locationTitle, locationContent);
-testimonialContainer.append(testimonialTitle, testimonialOne, testimonialTwo)
+testimonialContainer.append(testimonialTitle);
 
 splashContainer.id = 'splash-container';
+splashInfo.id = 'splash-info';
+splashBtnMenu.id = 'splash-btn-menu';
+informationContainer.id = 'information-container';
+homeContainer.id = 'home-container';
 
-splashTitle.textContent = 'Mmmm... *Drool*';
-splashSubtitle.textContent = 'Come on in for mouth-wateringly delicious comfort food'
+hoursContainer.className = 'grid-tile';
+locationContainer.className = 'grid-tile';
+testimonialContainer.className = 'grid-tile';
 
+splashTitle.textContent = 'Hearty, satisfying, mouth-wateringly delicious.';
+splashSubtitle.textContent =
+    'Locally sourced, classic recipes. Come try our menu!';
+splashBtnMenu.textContent = 'View our Menu';
 hoursTitle.textContent = 'Hours';
 locationTitle.textContent = 'Location';
 testimonialTitle.textContent = 'Testimonials';
+locationContent.textContent = '123 Wimby St., Toronto';
 
-informationContainer.id = 'information-container';
-homeContainer.id = 'home-container';
-locationContainer.id = 'location-container';
-testimonialContainer.id = 'testimonials-container';
+let testimonialList = [
+    '"Excellent service, delicious food, and a relaxing atmosphere."',
+    '"Great value and selection!"',
+    '"Very satisfying meal, fantastic place."',
+];
+
+testimonialList.forEach((testimonial) => {
+    const testimonialUList = document.createElement('ul');
+    const testimonialItem = document.createElement('li');
+    testimonialUList.id = 'testimonial-list';
+    testimonialItem.textContent = testimonial;
+    testimonialUList.append(testimonialItem);
+    testimonialContainer.append(testimonialUList);
+});
 
 let hoursListItems = [
     'monday-hours',
@@ -43,10 +67,10 @@ let hoursListItems = [
     'thursday-hours',
     'friday-hours',
     'saturday-hours',
-    'sunday-hours'
+    'sunday-hours',
 ];
 
-hoursListItems.forEach(day => {
+hoursListItems.forEach((day) => {
     let dayItem = document.createElement('li');
     dayItem.id = day;
     dayItem.className = 'day-list-item';
@@ -55,15 +79,12 @@ hoursListItems.forEach(day => {
 
 hoursList.querySelector('#monday-hours').textContent = 'Monday: 12PM - 10PM';
 hoursList.querySelector('#tuesday-hours').textContent = 'Tuesday: 12PM - 10PM';
-hoursList.querySelector('#wednesday-hours').textContent = 'Wednesday: 12PM - 10PM';
-hoursList.querySelector('#thursday-hours').textContent = 'Thursday: 12PM - 10PM';
+hoursList.querySelector('#wednesday-hours').textContent =
+    'Wednesday: 12PM - 10PM';
+hoursList.querySelector('#thursday-hours').textContent =
+    'Thursday: 12PM - 10PM';
 hoursList.querySelector('#friday-hours').textContent = 'Friday: 12PM - 10PM';
 hoursList.querySelector('#saturday-hours').textContent = 'Saturday: 4PM - 10PM';
 hoursList.querySelector('#sunday-hours').textContent = 'Sunday: 4PM - 10PM';
-
-locationContent.textContent = "123 Wimby St. Toronto";
-
-testimonialOne.textContent = "My face exploded! 5/5"
-testimonialTwo.textContent = "I spent the next day in the bathroom, and the next week in the hospital.";
 
 export default homeContainer;
