@@ -9,8 +9,8 @@
 
 :root {
     --strong-color: #322;
-    --accent-color: #AEE;
-    --light-neutral-color: #EEE;
+    --accent-color: #aee;
+    --light-neutral-color: #eee;
     --dark-neutral-color: #222;
 }
 
@@ -24,6 +24,33 @@
     width: max(70vw, 600px);
     height: max(45vw, 400px);
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash-info {
+    font-size: max(1rem, 2vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgb(255, 255, 255);
+}
+
+#splash-btn-menu {
+    padding: 1.5rem;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+
+#splash-btn-menu:hover {
+    transform: scale(1.1);
 }
 
 #information-container {
@@ -33,15 +60,26 @@
     padding: 1rem;
 }
 
-/* TODO: change to grid-tile class, add to all tiles (menu page, etc) */
-#information-container > * {
+.grid-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--accent-color);
     padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
 }
 
 .menu-item img {
-    width: 50%;
-    border: red 2px solid;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+}
+
+#menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
 }
 
 #content {
@@ -53,9 +91,8 @@
 
 header {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    align-content: flex-end;
+    align-items: center;
+    justify-content: space-around;
     background-color: var(--strong-color);
 }
 
@@ -68,14 +105,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     margin: 0;
     font-size: 3rem;
 }
 
 #top-navbar {
     display: flex;
-    width: 100%;
     justify-content: flex-end;
     gap: 2rem;
     font-size: 2rem;
@@ -83,12 +118,16 @@ header {
 }
 
 nav a {
-    transition: 0.3s;
     padding: 1rem;
+}
+
+nav a,
+footer a {
+    transition: 0.3s;
     text-decoration: underline;
 }
 
-nav a:hover {
+a:hover {
     background-color: #555;
 }
 
@@ -108,7 +147,6 @@ footer a {
 footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2rem;
     background-color: var(--strong-color);
     padding: 1rem;
