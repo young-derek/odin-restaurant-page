@@ -14,43 +14,45 @@ menuContainer.id = 'menu-container';
 menuPageTitle.id = 'menu-page-title';
 menuGrid.id = 'menu-grid';
 
-menuPageTitle.className = 'page-title';
+menuPageTitle.textContent = 'Menu';
 
+menuPageTitle.className = 'page-title';
 
 const menuItems = [
     {
         image: Pancakes,
         title: 'Stack of pancakes',
         description: 'A heaping stack of sweet, satisfying pancakes.',
-        price: '12'
+        price: '12',
     },
     {
         image: Pizza,
         title: 'Chicken & Pineapple Pizza',
         description: 'Savoury grilled chicken and sweet tangy pineapple pizza.',
-        price: '14'
+        price: '14',
     },
     {
         image: BaconCheeseBurger,
         title: 'Bacon Cheeseburger',
-        description: 'A comfort foodie\'s favourite, a whopping bacon cheeseburger.',
-        price: '11'
+        description:
+            "A comfort foodie's favourite, a whopping bacon cheeseburger.",
+        price: '11',
     },
     {
         image: MacAndCheese,
         title: 'Mac & Cheese',
         description: 'Simple, classic and delicious Macaroni & Cheese.',
-        price: '8'
+        price: '8',
     },
     {
         image: ChocolateCake,
         title: 'Chocolate Cake',
         description: 'Indulge yourself with this freshly baked chocolate cake.',
-        price: '15'
-    }
+        price: '15',
+    },
 ];
 
-menuItems.forEach(menuItem => {
+menuItems.forEach((menuItem) => {
     const menuItemTile = document.createElement('div');
     const menuItemImage = document.createElement('img');
     const menuItemTitle = document.createElement('h3');
@@ -62,7 +64,7 @@ menuItems.forEach(menuItem => {
     menuItemDescription.textContent = menuItem.description;
     menuItemPrice.textContent = `$${menuItem.price}`;
 
-    menuItemTile.className = 'menu-item';
+    menuItemTile.classList = 'menu-item grid-tile';
 
     menuItemTile.append(
         menuItemTitle,
@@ -73,6 +75,5 @@ menuItems.forEach(menuItem => {
 
     menuGrid.append(menuItemTile);
 });
-
 
 export default menuContainer;
