@@ -4,11 +4,112 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --strong-color: #322;
+    --accent-color: #AEE;
+    --light-neutral-color: #EEE;
+    --dark-neutral-color: #222;
 }
 
 #splash-container {
-    background-image: url('images/mario--s27nY8mZUE-unsplash.jpg');
-    background-size: min(100vw, 100vh);
-    width: min(100vw, 100vh);
-    height: min(100vw, 100vh);
+    background-image: url('images/aleisha-kalina-XqsfGjtB0xE-unsplash.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    box-shadow: 3px 3px 3px black;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: max(70vw, 600px);
+    height: max(45vw, 400px);
+    margin: auto;
+}
+
+#information-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem;
+}
+
+/* TODO: change to grid-tile class, add to all tiles (menu page, etc) */
+#information-container > * {
+    background-color: var(--accent-color);
+    padding: 1rem;
+}
+
+.menu-item img {
+    width: 50%;
+    border: red 2px solid;
+}
+
+#content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: var(--light-neutral-color);
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    background-color: var(--strong-color);
+}
+
+#logo,
+#top-navbar {
+    padding: 0.5rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    font-size: 3rem;
+}
+
+#top-navbar {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-size: 2rem;
+    margin: 0;
+}
+
+nav a {
+    transition: 0.3s;
+    padding: 1rem;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+#main-container {
+    color: var(--strong-color);
+    padding: 1rem;
+}
+
+nav a,
+#logo,
+#splash-container,
+footer,
+footer a {
+    color: var(--accent-color);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--strong-color);
+    padding: 1rem;
 }

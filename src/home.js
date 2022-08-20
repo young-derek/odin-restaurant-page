@@ -1,4 +1,4 @@
-const homeContainer = document.createElement('main');
+const homeContainer = document.createElement('div');
 const splashContainer = document.createElement('div');
 const splashTitle = document.createElement('h2');
 const splashSubtitle = document.createElement('p');
@@ -30,6 +30,11 @@ splashSubtitle.textContent = 'Come on in for mouth-wateringly delicious comfort 
 hoursTitle.textContent = 'Hours';
 locationTitle.textContent = 'Location';
 testimonialTitle.textContent = 'Testimonials';
+
+informationContainer.id = 'information-container';
+homeContainer.id = 'home-container';
+locationContainer.id = 'location-container';
+testimonialContainer.id = 'testimonials-container';
 
 let hoursListItems = [
     'monday-hours',
